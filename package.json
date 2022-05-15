@@ -1,0 +1,25 @@
+{
+  "name": "nerdzone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "DefepDaelt <claudio.roberto.santana.f@gmail.com>",
+  "license": "MIT",
+  "lint-staged": {
+    "server/**/*.(t|j)sx?$": [
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.3.0",
+    "@commitlint/config-conventional": "^16.2.4",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
