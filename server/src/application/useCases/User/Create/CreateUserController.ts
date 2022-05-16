@@ -10,16 +10,12 @@ export class CreateUserController {
   async handle (request: Request, response: Response): Promise<Response> {
     const { name, email, password } = request.body
 
-    console.log(request.body)
-
     try {
       const user = await this.createUser.execute({
         name,
         email,
         password
       })
-
-      console.log(user)
 
       return response.status(201).send({ user })
     } catch (error) {

@@ -9,14 +9,11 @@ export class CreateUser {
   ) {}
 
   async execute ({ name, email, password }: CreateUserRequestDTO) {
-    console.log(name, email, password)
     if (!email.trim()) {
       throw new Error('Email is required')
     }
 
     const userAlreadyExsists = await this.userRepository.findByEmailOrId({ email })
-
-    console.log(userAlreadyExsists)
 
     if (userAlreadyExsists) {
       throw new Error('User already exsists')
@@ -26,7 +23,7 @@ export class CreateUser {
       throw new Error('Password is required')
     }
 
-    const user = User.create({
+    const user = await User.create({
       name,
       email,
       password

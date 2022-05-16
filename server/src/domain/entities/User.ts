@@ -1,3 +1,4 @@
+import { hash } from 'bcrypt'
 import { Entity } from './../../core/domain/Entity'
 
 type UserProps = {
@@ -13,9 +14,10 @@ export class User extends Entity<UserProps> {
     super(props, id)
   }
 
-  static create (props: UserProps, id?: string) {
+  static async create (props: UserProps, id?: string) {
     const user = new User({
       ...props,
+      password: await hash(props.password, 10),
       createdAt: props.createdAt ?? new Date()
     }, id)
 
