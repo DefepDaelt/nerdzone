@@ -23,3 +23,18 @@ Its main usability is managing the campaigns and RPG character sheets.
 
 - Railway
 - Vercel
+
+---
+
+## :keyboard: How to use?
+
+```sh
+# Download this repository
+git clone https://github.com/DefepDaelt/nerdzone.git
+```
+
+```sh
+# Run server
+cd nerdzone/server
+yarn start:dev
+```
