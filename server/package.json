@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --passWithNoTests",
     "build": "tsc",
-    "start:deploy": "node dist/server.js",
+    "start:deploy": "yarn prisma migrate deploy && node dist/server.js",
     "start:dev": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts"
   },
   "devDependencies": {
