@@ -6,5 +6,5 @@ const HOST = process.env.RAILWAY_STATIC_URL || 'localhost'
 const PORT = process.env.PORT || 3333
 
 app.listen(PORT, () => {
-  console.log(`Server is running in ${PROTOCOLL}${HOST}${ENVIRONMENT === 'developmemnt' && `:${PORT}`}`)
+  console.log(`Server is running in ${PROTOCOLL}${HOST}${ENVIRONMENT === 'developmemnt' ? `:${PORT}` : ''}`)
 })
